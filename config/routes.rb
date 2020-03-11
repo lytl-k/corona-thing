@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'corona/home#index'
+
+  namespace :corona do
+    get '/cases', to: 'n_cov_16#cases'
+    get '/recovered', to: 'n_cov_16#recovers'
+    get '/deaths', to: 'n_cov_16#deaths'
+  end
 end

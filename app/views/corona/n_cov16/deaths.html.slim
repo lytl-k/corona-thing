@@ -1,0 +1,13 @@
+h2 Deaths
+
+label
+  | Current Amount: #{@deaths['data']}
+br
+label
+  | Updated: #{@deaths['date']}
+
+h3 Growth
+
+= line_chart @all_deaths.map { |c| [c.snapshot, c.amount] }, min: @min, max: @max
+br
+= column_chart @all_deaths.map { |c| [c.snapshot, c.amount] }, min: @min, max: @max

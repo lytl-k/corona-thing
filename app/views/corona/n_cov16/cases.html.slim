@@ -1,0 +1,15 @@
+h2 Cases
+h4 Current Amount
+label
+  | #{@cases['cases']}
+h4 Updated
+label
+  | #{@cases['date']}
+
+h3 Growth
+
+h4 Line Chart
+= line_chart @all_cases.map { |c| [c.snapshot, c.amount] }, min: @min, max: @max
+
+h4 Column Chart
+= column_chart @all_cases.map { |c| [c.snapshot, c.amount] }, min: @min, max: @max

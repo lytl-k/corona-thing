@@ -1,0 +1,13 @@
+h2 Recovered
+
+label
+  | Current Amount: #{@recovers['data']}
+br
+label
+  | Updated: #{@recovers['date']}
+
+h3 Growth
+
+= line_chart @all_recovers.map { |c| [c.snapshot, c.amount] }, min: @min, max: @max
+br
+= column_chart @all_recovers.map { |c| [c.snapshot, c.amount] }, min: @min, max: @max

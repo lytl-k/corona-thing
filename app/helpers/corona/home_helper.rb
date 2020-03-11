@@ -1,0 +1,2 @@
+module Corona::HomeHelper
+end
